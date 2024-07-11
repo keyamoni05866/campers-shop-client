@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.primary-color {
+  color: #03a298;
+}
+
+.custom-btn {
+  padding: 12px 25px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #4f918a;
+  border: none;
+  border-radius: 5px;
+  font: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.custom-btn:hover {
+  background-color: #7fb9a8;
+}
+.custom-outline-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+  border: 1px solid #97d8c4;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-background {
+  background: linear-gradient(90deg, #eeebeb, #c6ece3);
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .custom-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+  .custom-outline-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1024px) {
+  .custom-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+}
