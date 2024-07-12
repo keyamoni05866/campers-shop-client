@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.jpg";
 
 const Navbar = () => {
   return (
     <>
-      <div className="navbar fixed z-10  lg:px-[100px] bg-opacity-60 text-[#1F1E1E] rounded-md">
+      <div className="navbar lg:px-[100px] custom-background ">
         <div className="navbar-start  ">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -54,14 +55,14 @@ const Navbar = () => {
         </div>
 
         {/* for large  */}
-        <div className="navbar-center hidden lg:flex text-[#1F1E1E]">
+        <div className="navbar-center hidden lg:flex text-black">
           <ul className="menu menu-horizontal px-1 text-[15px]">
             <li>
-              <a>Home</a>
+              <Link to="/">Home</Link>
             </li>
 
             <li>
-              <a>Products</a>
+              <Link to="/products">Products</Link>
             </li>
             <li>
               <a>Product Management</a>
@@ -72,7 +73,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="  text-black">
+          <a className="  primary-color">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
