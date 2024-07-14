@@ -9,7 +9,7 @@
 }
 
 .primary-color {
-  color: #03a298;
+  color: #4f918a;
 }
 
 .custom-btn {
@@ -61,6 +61,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 300px) and (max-width: 768px) {
