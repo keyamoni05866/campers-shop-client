@@ -4,6 +4,7 @@ import {
   faCouch,
   faFirstAid,
   faTent,
+  faToolbox,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Categories.css";
 import { faShoePrints } from "@fortawesome/free-solid-svg-icons/faShoePrints";
@@ -38,10 +39,10 @@ const Categories = () => {
 
           <h4 className="text-lg pb-3 font-semibold ">Camping Furniture</h4>
         </div>
-        <div className=" icon-div shadow-md">
-          <FontAwesomeIcon className="text-4xl pt-7" icon={faTent} />
+        <div className=" icon-div shadow-md ">
+          <FontAwesomeIcon className="text-4xl pt-7 ms-12" icon={faToolbox} />
 
-          <h4 className="text-xl pb-3 font-semibold ">Bags</h4>
+          <h4 className="text-xl pb-3 font-semibold ">Camping Tools</h4>
         </div>
         <div className=" icon-div shadow-md">
           <FontAwesomeIcon className="text-4xl pt-7" icon={faBagShopping} />
