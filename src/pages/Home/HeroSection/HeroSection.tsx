@@ -6,7 +6,7 @@ const HeroSection = () => {
       <div className="hero-content xl:gap-28 flex-col lg:flex-row-reverse ">
         <div className="mb-3 lg:mb-0  xl:me-16 side-pic"></div>
         <div className=" xl:ms-12  xl:mb-16 text-center">
-          <div className="xl:max-w-[800px] lg:max-w-[500px] xl:ms-3 lg:ms-2">
+          <div className="xl:max-w-[800px] lg:max-w-[500px] xl:ms-4 lg:ms-2">
             <h1 className="  text-[#1F1E1E] text-[18px]   lg:text-xl  font-bold xl:text-3xl lg:flex lg:gap-2 mb-2   ">
               Embrace the Outdoors with
               <span className="primary-color lg:ms-0 ms-20 flex gap-2">

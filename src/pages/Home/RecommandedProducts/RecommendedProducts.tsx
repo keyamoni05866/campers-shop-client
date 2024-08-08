@@ -14,8 +14,8 @@ const RecommendedProducts = () => {
 
       {/* Products Card */}
 
-      <div className="mt-10 card-grid">
-        <div className="card bg-base-100 image-full w-[350px] lg:w-96 shadow-xl">
+      <div className="mt-10 card-grid gap-4 mx-[20px]">
+        <div className=" card bg-base-100 image-full w-[350px] lg:w-[370px] shadow-xl">
           <figure>
             <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
           </figure>
@@ -27,7 +27,7 @@ const RecommendedProducts = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 image-full lg:w-96  w-[350px] shadow-xl">
+        <div className="card bg-base-100 image-full lg:w-[370px]   w-[350px] shadow-xl">
           <figure>
             <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
           </figure>
@@ -39,7 +39,7 @@ const RecommendedProducts = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 w-[350px] image-full  lg:w-96  shadow-xl">
+        <div className="card  bg-base-100 w-[350px] image-full lg:w-[370px]  shadow-xl">
           <figure>
             <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
           </figure>
@@ -51,7 +51,7 @@ const RecommendedProducts = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 image-full w-[350px] lg:w-96 shadow-xl">
+        <div className="card  bg-base-100 image-full w-[350px] lg:w-[370px]shadow-xl">
           <figure>
             <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
           </figure>
@@ -63,7 +63,7 @@ const RecommendedProducts = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 image-full w-[350px] lg:w-96 shadow-xl">
+        <div className="card bg-base-100 image-full w-[350px] lg:w-[370px] shadow-xl">
           <figure>
             <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
           </figure>
