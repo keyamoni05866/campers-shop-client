@@ -4,7 +4,7 @@ import logo from "../../../assets/logo.jpg";
 const Navbar = () => {
   return (
     <>
-      <div className="navbar lg:px-[100px]  custom-background ">
+      <div className="navbar  lg:px-16  ">
         <div className="navbar-start  ">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,17 +29,17 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Home</a>
+                <Link to="/">Home</Link>
               </li>
 
               <li>
-                <a>Products</a>
+                <Link to="/products">Products</Link>
               </li>
               <li>
-                <a>Product Management</a>
+                <Link to="/productManagement">Product Management</Link>
               </li>
               <li>
-                <a>About Us</a>
+                <Link to="/aboutUs">About Us</Link>
               </li>
             </ul>
           </div>
@@ -65,10 +65,10 @@ const Navbar = () => {
               <Link to="/products">Products</Link>
             </li>
             <li>
-              <a>Product Management</a>
+              <Link to="/productManagement">Product Management</Link>
             </li>
             <li>
-              <a>About Us</a>
+              <Link to="/aboutUs">About Us</Link>
             </li>
           </ul>
         </div>

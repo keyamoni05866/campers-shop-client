@@ -1,6 +1,6 @@
 const RecommendedProducts = () => {
   return (
-    <div className="mt-12 mb-28 px-4 lg:px-[100px]">
+    <div className="mt-12 mb-28 px-3 md:px-10  lg:px-16  ">
       <div className=" side-text">
         <p className="font-semibold ms-2 lg:text-[22px] ">Explore Our</p>
 
@@ -15,7 +15,7 @@ const RecommendedProducts = () => {
       {/* Products Card */}
 
       <div className="mt-10 card-grid gap-4 mx-[20px]">
-        <div className=" card bg-base-100 image-full w-[350px] lg:w-[370px] shadow-xl">
+        <div className=" card bg-base-100 image-full max-w-[370px] shadow-xl">
           <figure>
             <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
           </figure>
@@ -27,7 +27,7 @@ const RecommendedProducts = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 image-full lg:w-[370px]   w-[350px] shadow-xl">
+        <div className="card bg-base-100 image-full max-w-[370px]   shadow-xl">
           <figure>
             <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
           </figure>
@@ -39,7 +39,7 @@ const RecommendedProducts = () => {
             </div>
           </div>
         </div>
-        <div className="card  bg-base-100 w-[350px] image-full lg:w-[370px]  shadow-xl">
+        <div className="card  bg-base-100 max-w-[370px] image-full   shadow-xl">
           <figure>
             <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
           </figure>
@@ -51,7 +51,7 @@ const RecommendedProducts = () => {
             </div>
           </div>
         </div>
-        <div className="card  bg-base-100 image-full w-[350px] lg:w-[370px]shadow-xl">
+        <div className="card  bg-base-100 image-full max-w-[370px] shadow-xl">
           <figure>
             <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
           </figure>
@@ -63,7 +63,7 @@ const RecommendedProducts = () => {
             </div>
           </div>
         </div>
-        <div className="card bg-base-100 image-full w-[350px] lg:w-[370px] shadow-xl">
+        <div className="card bg-base-100 image-full max-w-[370px] shadow-xl">
           <figure>
             <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
           </figure>

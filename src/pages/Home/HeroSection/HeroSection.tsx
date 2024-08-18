@@ -2,7 +2,7 @@ import "./HeroSection.css";
 import Typewriter from "typewriter-effect";
 const HeroSection = () => {
   return (
-    <div className="hero custom-background lg:h-[500px] lg:pb-0 px-5 pb-24 lg:pt-0 pt-16  xl:min-h-screen  ">
+    <div className="hero lg:h-[500px] lg:pb-0  pb-24 lg:pt-0 pt-16  xl:min-h-screen  ">
       <div className="hero-content xl:gap-28 flex-col lg:flex-row-reverse ">
         <div className="mb-3 lg:mb-0  xl:me-16 side-pic"></div>
         <div className=" xl:ms-12  xl:mb-16 text-center">

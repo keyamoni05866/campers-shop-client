@@ -2,7 +2,7 @@ import faqImage from "../../../assets/faq.png";
 
 const Faq = () => {
   return (
-    <div className="mt-12 mb-28 px-4 lg:px-[100px]">
+    <div className="mt-12 mb-28  px-3 md:px-10  lg:px-16   ">
       <div className=" side-text">
         <p className="font-semibold ms-2 lg:text-[22px] primary-color">
           Campers Shop FAQ

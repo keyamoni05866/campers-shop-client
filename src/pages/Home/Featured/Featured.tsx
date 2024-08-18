@@ -1,11 +1,10 @@
-import "./Featured.css";
 import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
 const Featured = () => {
   return (
-    <div className="mt-12 mb-28 px-4 lg:px-[100px]">
+    <div className="mt-12 mb-28  px-3 md:px-10  lg:px-16   ">
       <div className=" side-text">
         <p className="font-semibold ms-2 lg:text-[22px] ">
           Featured <span className="primary-color"> Products</span>
@@ -17,8 +16,8 @@ const Featured = () => {
         </div>
       </div>
 
-      <div className="mt-10 card-grid  gap-y-6  mx-[30px]">
-        <div className="card card-compact bg-base-100 w-[340px] shadow-md rounded-[2px] mx-auto">
+      <div className="mt-10 card-grid  mx-5   gap-6">
+        <div className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto">
           <figure>
             <img
               src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -57,7 +56,7 @@ const Featured = () => {
             </div>
           </div>
         </div>
-        <div className="card card-compact bg-base-100 w-[340px] shadow-md rounded-[2px] mx-auto">
+        <div className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto">
           <figure>
             <img
               src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -96,7 +95,7 @@ const Featured = () => {
             </div>
           </div>
         </div>
-        <div className="card card-compact bg-base-100 w-[340px] shadow-md rounded-[2px] mx-auto">
+        <div className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto">
           <figure>
             <img
               src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -135,7 +134,7 @@ const Featured = () => {
             </div>
           </div>
         </div>
-        <div className="card card-compact bg-base-100 w-[340px] shadow-md rounded-[2px] mx-auto">
+        <div className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto">
           <figure>
             <img
               src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -174,7 +173,7 @@ const Featured = () => {
             </div>
           </div>
         </div>
-        <div className="card card-compact bg-base-100 w-[340px] shadow-md rounded-[2px] mx-auto">
+        <div className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto">
           <figure>
             <img
               src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"

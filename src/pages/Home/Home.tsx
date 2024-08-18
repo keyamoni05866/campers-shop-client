@@ -1,5 +1,5 @@
 import Categories from "./Categories/Categories";
-import Testimonial from "./ExtraSection/Testimonial";
+import Testimonial from "./UniqueSection/Testimonial";
 import Faq from "./FAQ/Faq";
 import Featured from "./Featured/Featured";
 import HeroSection from "./HeroSection/HeroSection";
@@ -11,9 +11,9 @@ const Home = () => {
       <HeroSection></HeroSection>
       <RecommendedProducts></RecommendedProducts>
       <Categories></Categories>
-      {/* <Testimonial></Testimonial> */}
-      <Faq></Faq>
       <Featured></Featured>
+      <Testimonial></Testimonial>
+      <Faq></Faq>
     </div>
   );
 };
