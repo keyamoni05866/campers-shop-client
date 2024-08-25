@@ -5,11 +5,10 @@ import {
   useGetProductsQuery,
 } from "../../redux/api/api";
 import { TProduct } from "../../types";
-// import { swal } from "sweetalert";
+
 import swal from "sweetalert2";
 
 import UpdateProductModal from "./UpdateProductModal";
-import { Link } from "react-router-dom";
 
 const ProductsTable = () => {
   const { data: products } = useGetProductsQuery({});
@@ -56,15 +55,12 @@ const ProductsTable = () => {
 
         {products?.data && products?.data?.length > 0 ? (
           products?.data?.map((product: TProduct) => (
-            <tr className="text-xs md:text-sm lg:text-base">
+            <tr key={product._id} className="text-xs md:text-sm lg:text-base">
               <td className="p-2">
                 <div className="flex items-center gap-3">
                   <div className="avatar">
-                    <div className="mask mask-squircle h-12 w-12">
-                      <img
-                        src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                        alt="Avatar Tailwind CSS Component"
-                      />
+                    <div className="mask bg-base-300 mask-squircle h-14 w-14">
+                      <img src={product.image} alt="Product Image" />
                     </div>
                   </div>
                 </div>
@@ -80,9 +76,11 @@ const ProductsTable = () => {
                   Details
                 </button>
 
-                <UpdateProductModal {...product}>
-                  <button className="me-2 mb-2 btn btn-xs lg:btn-sm"> </button>
-                </UpdateProductModal>
+                {/* <UpdateProductModal {...product}> */}
+                <button className="me-2 mb-2 btn btn-xs lg:btn-sm">
+                  Update{" "}
+                </button>
+                {/* </UpdateProductModal> */}
 
                 {/* <label
                   className="me-2 mb-2 btn btn-xs lg:btn-sm"

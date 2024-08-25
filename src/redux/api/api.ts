@@ -20,6 +20,10 @@ export const baseApi = createApi({
         };
       },
     }),
+    // get Product Details
+    productDetails: builder.query({
+      query: (id) => `/products/${id}`,
+    }),
 
     // addProduct
     addProduct: builder.mutation({
@@ -57,6 +61,7 @@ export const baseApi = createApi({
 
 export const {
   useGetProductsQuery,
+  useProductDetailsQuery,
   useAddProductMutation,
   useDeleteProductMutation,
 } = baseApi;

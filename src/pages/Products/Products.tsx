@@ -2,7 +2,10 @@ import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
+import { useGetProductsQuery } from "../../redux/api/api";
+import { TProduct } from "../../types";
 const Products = () => {
+  const { data: products } = useGetProductsQuery({});
   return (
     <div className="mt-12 mb-28 px-4 lg:px-24 min-h-screen">
       {/* <div className=" side-text">
@@ -17,7 +20,63 @@ const Products = () => {
       </div> */}
 
       <div className="mt-10 mx-5 card-grid   gap-6 ">
-        <div className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto">
+        {products?.data && products?.data?.length > 0 ? (
+          products?.data?.map((product: TProduct) => (
+            <div
+              key={product._id}
+              className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto"
+            >
+              <div className="bg-base-200 w-[360px]  h-[220px] flex justify-center items-center">
+                <img
+                  src={product.image}
+                  alt="Product Picture"
+                  className=" w-full h-full "
+                />
+              </div>
+              <div className=" my-4 mx-5">
+                <h3 className="card-title">{product?.name}</h3>
+                <h4 className=" text-lg mt-3 ">
+                  Price: <span className="font-semibold">{product?.price}</span>
+                </h4>
+
+                <div className="card-actions items-center justify-between mt-2">
+                  <div>
+                    {" "}
+                    <Rating
+                      style={{ maxWidth: 120 }}
+                      value={product.ratings}
+                      readOnly
+                    />
+                  </div>
+                  <Link
+                    to={`/products/${product._id}`}
+                    className="custom-outline-btn flex   items-center justify-center"
+                  >
+                    Details
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-[18px] ms-[5px]"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <h2>No Product Found!!! Please Add</h2>
+        )}
+
+        {/* <div className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto">
           <figure>
             <img
               src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -58,163 +117,7 @@ const Products = () => {
               </Link>
             </div>
           </div>
-        </div>
-        <div className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className=" h-[50%] "
-            />
-          </figure>
-          <div className=" my-4 mx-5">
-            <h3 className="card-title">Shoes!</h3>
-            <h4 className=" text-lg mt-3 ">
-              Price: <span className="font-semibold">$40</span>
-            </h4>
-
-            <div className="card-actions items-center justify-between mt-2">
-              <div>
-                {" "}
-                <Rating style={{ maxWidth: 120 }} value={3} />
-              </div>
-              <Link className="custom-outline-btn flex   items-center justify-center">
-                Details
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-[18px] ms-[5px]"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className=" h-[50%] "
-            />
-          </figure>
-          <div className=" my-4 mx-5">
-            <h3 className="card-title">Shoes!</h3>
-            <h4 className=" text-lg mt-3 ">
-              Price: <span className="font-semibold">$40</span>
-            </h4>
-
-            <div className="card-actions items-center justify-between mt-2">
-              <div>
-                {" "}
-                <Rating style={{ maxWidth: 120 }} value={3} />
-              </div>
-              <Link className="custom-outline-btn flex   items-center justify-center">
-                Details
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-[18px] ms-[5px]"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className=" h-[50%] "
-            />
-          </figure>
-          <div className=" my-4 mx-5">
-            <h3 className="card-title">Shoes!</h3>
-            <h4 className=" text-lg mt-3 ">
-              Price: <span className="font-semibold">$40</span>
-            </h4>
-
-            <div className="card-actions items-center justify-between mt-2">
-              <div>
-                {" "}
-                <Rating style={{ maxWidth: 120 }} value={3} />
-              </div>
-              <Link className="custom-outline-btn flex   items-center justify-center">
-                Details
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-[18px] ms-[5px]"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className=" h-[50%] "
-            />
-          </figure>
-          <div className=" my-4 mx-5">
-            <h3 className="card-title">Shoes!</h3>
-            <h4 className=" text-lg mt-3 ">
-              Price: <span className="font-semibold">$40</span>
-            </h4>
-
-            <div className="card-actions items-center justify-between mt-2">
-              <div>
-                {" "}
-                <Rating style={{ maxWidth: 120 }} value={3} />
-              </div>
-              <Link className="custom-outline-btn flex   items-center justify-center">
-                Details
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-[18px] ms-[5px]"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

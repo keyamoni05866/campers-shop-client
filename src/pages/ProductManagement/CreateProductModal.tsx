@@ -117,7 +117,6 @@ const CreateProductModal = () => {
                       Select Category
                     </option>
                     <option>Tents & Shelters</option>
-                    <option>Sleeping Gear</option>
                     <option>Backpacks & Bags</option>
                     <option>Footwear</option>
                     <option>Lighting & Navigation</option>
