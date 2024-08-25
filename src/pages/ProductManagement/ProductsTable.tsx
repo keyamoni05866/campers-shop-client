@@ -1,18 +1,42 @@
+// import swal from "sweetalert";
+import { toast } from "sonner";
 import {
   useDeleteProductMutation,
   useGetProductsQuery,
 } from "../../redux/api/api";
 import { TProduct } from "../../types";
+// import { swal } from "sweetalert";
+import swal from "sweetalert2";
+
+import UpdateProductModal from "./UpdateProductModal";
+import { Link } from "react-router-dom";
 
 const ProductsTable = () => {
   const { data: products } = useGetProductsQuery({});
   const [deleteProduct] = useDeleteProductMutation();
+
   // console.log(products);
 
   // delete operation
-  const handleDelete = (productDeleteId: string) => {
+  const handleDelete = async (productDeleteId: string) => {
     // console.log(productDeleteId);
-    deleteProduct(productDeleteId);
+    // deleteProduct(productDeleteId);
+    swal
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      })
+      .then(async (result: any) => {
+        if (result.isConfirmed) {
+          const res = await deleteProduct(productDeleteId);
+          toast.success(res.data?.message);
+        }
+      });
   };
 
   return (
@@ -55,9 +79,23 @@ const ProductsTable = () => {
                 <button className="me-2 btn btn-outline btn-success mb-2  btn-xs lg:btn-sm">
                   Details
                 </button>
-                <button className="me-2 mb-2  btn  btn-xs lg:btn-sm">
-                  Update
-                </button>
+
+                <UpdateProductModal {...product}>
+                  <button className="me-2 mb-2 btn btn-xs lg:btn-sm"> </button>
+                </UpdateProductModal>
+
+                {/* <label
+                  className="me-2 mb-2 btn btn-xs lg:btn-sm"
+                  htmlFor={`${product._id}`}
+                > */}
+                {/* <Link to={`/upd ateProduct/${product._id}`}> */}
+                {/* <UpdateProductModal> */}
+                {/* <Link to={`/updateProduct/${product._id}`}>Update</Link> */}
+                {/* </UpdateProductModal> */}
+                {/* </Link> */}
+                {/* </label> */}
+                {/* <UpdateProductModal></UpdateProductModal> */}
+
                 <button
                   onClick={() => handleDelete(product._id)}
                   className="btn text-white bg-[#ff0000] hover:bg-[#c51313]  btn-xs lg:btn-sm"

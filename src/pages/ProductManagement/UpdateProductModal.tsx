@@ -2,41 +2,45 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { TProduct, TResponse } from "../../types";
 import { useAddProductMutation } from "../../redux/api/api";
 import { toast } from "sonner";
+import { useLoaderData } from "react-router-dom";
 
-const CreateProductModal = () => {
-  const [addProduct] = useAddProductMutation();
+const UpdateProductModal = (product) => {
+  // const product = useLoaderData();
+
+  console.log(product);
+  //   console.log(product);
+  //   console.log(product);
+  //   console.log(id);
+  //   const [addProduct] = useAddProductMutation();
   const { register, handleSubmit } = useForm<TProduct>();
   const onSubmit: SubmitHandler<TProduct> = async (data) => {
-    const toastId = toast.loading("Creating....");
-    // console.log(data);
-    const productData = {
-      name: data.name,
-      price: data.price,
-      stockQuantity: Number(data.stockQuantity),
-      description: data.description,
-      category: data.category,
-      image: data.image,
-      ratings: Number(data.ratings),
-    };
-    try {
-      const res = (await addProduct(productData)) as TResponse<any>;
-      if (res.error) {
-        toast.error(res.error?.data?.message, { id: toastId });
-      } else {
-        toast.success(res.data?.message, { id: toastId });
-      }
-    } catch (err) {
-      toast.error("Something Went Wrong!!");
-    }
+    //   const toastId = toast.loading("Creating....");
+    //   // console.log(data);
+    //   const productData = {
+    //     name: data.name,
+    //     price: data.price,
+    //     stockQuantity: Number(data.stockQuantity),
+    //     description: data.description,
+    //     category: data.category,
+    //     image: data.image,
+    //     ratings: Number(data.ratings),
+    //   };
+    //   try {
+    //     const res = (await addProduct(productData)) as TResponse<any>;
+    //     if (res.error) {
+    //       toast.error(res.error?.data?.message, { id: toastId });
+    //     } else {
+    //       toast.success(res.data?.message, { id: toastId });
+    //     }
+    //   } catch (err) {
+    //     toast.error("Something Went Wrong!!");
+    //   }
   };
   return (
     <div>
-      <div className="flex justify-end my-2">
-        <label className="custom-btn" htmlFor="my_modal">
-          Create Product
-        </label>
-      </div>
-
+      <label className="me-2 mb-2 btn btn-xs lg:btn-sm" htmlFor="my_modal">
+        Update
+      </label>
       <input type="checkbox" id="my_modal" className="modal-toggle" />
       <div className="modal" role="dialog">
         <div className="modal-box max-w-2xl">
@@ -152,6 +156,18 @@ const CreateProductModal = () => {
                 ></textarea>
               </div>
             </div>
+            <div>
+              <label className="block text-sm font-medium leading-6 text-gray-900">
+                Product Description :
+              </label>
+              <div className="relative mt-2 rounded-md shadow-sm">
+                <textarea
+                  className="textarea textarea-bordered w-full"
+                  placeholder="Describe Your Product"
+                  {...register("description")}
+                ></textarea>
+              </div>
+            </div>
             <div className="flex justify-end my-3">
               <button type="submit" className=" custom-btn ">
                 Submit
@@ -164,4 +180,4 @@ const CreateProductModal = () => {
   );
 };
 
-export default CreateProductModal;
+export default UpdateProductModal;
