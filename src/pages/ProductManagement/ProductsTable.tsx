@@ -6,7 +6,7 @@ import {
 } from "../../redux/api/api";
 import { TProduct } from "../../types";
 
-import swal from "sweetalert2";
+import Swal from "sweetalert2";
 
 import UpdateProductModal from "./UpdateProductModal";
 
@@ -20,22 +20,20 @@ const ProductsTable = () => {
   const handleDelete = async (productDeleteId: string) => {
     // console.log(productDeleteId);
     // deleteProduct(productDeleteId);
-    swal
-      .fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!",
-      })
-      .then(async (result: any) => {
-        if (result.isConfirmed) {
-          const res = await deleteProduct(productDeleteId);
-          toast.success(res.data?.message);
-        }
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result: any) => {
+      if (result.isConfirmed) {
+        const res = await deleteProduct(productDeleteId);
+        toast.success(res.data?.message);
+      }
+    });
   };
 
   return (
@@ -68,7 +66,7 @@ const ProductsTable = () => {
               <td>
                 <span>{product.name}</span>
               </td>
-              <td>{product.price}</td>
+              <td>${product?.price}</td>
               <td>{product.category}</td>
               <td>
                 {/* <div className=""> */}

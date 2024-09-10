@@ -17,15 +17,24 @@
 }
 
 @media (min-width: 300px) and (max-width: 600px) {
-  .side-pic {
-    width: 300px;
+  .side-pic2 {
+    width: 350px;
     height: 300px;
     border-radius: 5px;
+    box-shadow: inset 0 0 0 9px rgb(255, 255, 255/30%);
+    border-radius: 80px 3px 80px 3px;
+    justify-self: center;
+
+    animation: profile_animate 4s ease-in-out;
   }
 }
 @media (min-width: 600px) and (max-width: 1024px) {
-  .side-pic {
-    width: 300px;
+  .side-pic2 {
+    width: 350px;
     height: 300px;
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 9px rgb(255, 255, 255/30%);
+    border-radius: 80px 3px 80px 3px;
+    justify-self: center;
   }
 }

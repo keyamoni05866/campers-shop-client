@@ -36,7 +36,8 @@ const Products = () => {
               <div className=" my-4 mx-5">
                 <h3 className="card-title">{product?.name}</h3>
                 <h4 className=" text-lg mt-3 ">
-                  Price: <span className="font-semibold">{product?.price}</span>
+                  Price:{" "}
+                  <span className="font-semibold">${product?.price}</span>
                 </h4>
 
                 <div className="card-actions items-center justify-between mt-2">
@@ -73,51 +74,8 @@ const Products = () => {
             </div>
           ))
         ) : (
-          <h2>No Product Found!!! Please Add</h2>
+          <h2 className="text-center">No Product Found!!! </h2>
         )}
-
-        {/* <div className="card card-compact bg-base-100 max-w-[360px] shadow-md rounded-[2px] mx-auto">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt="Shoes"
-              className=" h-[50%] "
-            />
-          </figure>
-          <div className=" my-4 mx-5">
-            <h3 className="card-title">Shoes!</h3>
-            <h4 className=" text-lg mt-3 ">
-              Price: <span className="font-semibold">$40</span>
-            </h4>
-
-            <div className="card-actions items-center justify-between mt-2">
-              <div>
-                {" "}
-                <Rating style={{ maxWidth: 120 }} value={3} />
-              </div>
-              <Link
-                to="/products/singleProduct"
-                className="custom-outline-btn flex   items-center justify-center"
-              >
-                Details
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-[18px] ms-[5px]"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );

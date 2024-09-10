@@ -1,25 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBagShopping,
-  faCouch,
-  faFirstAid,
-  faTent,
-  faToolbox,
-} from "@fortawesome/free-solid-svg-icons";
-// import "./Categories.css";
-import { faShoePrints } from "@fortawesome/free-solid-svg-icons/faShoePrints";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
 import pic1 from "../../../assets/testimonialPictures/image1.png";
-import pic2 from "../../../assets/testimonialPictures/image2.png";
-import pic3 from "../../../assets/testimonialPictures/image3.png";
-import pic4 from "../../../assets/testimonialPictures/image4.png";
-import pic5 from "../../../assets/testimonialPictures/image5.png";
-import pic6 from "../../../assets/testimonialPictures/image6.png";
 
 const Categories = () => {
   return (

@@ -7,19 +7,19 @@ const AboutUs = () => {
   return (
     <div className="mt-14 mb-28 px-4 lg:px-20 min-h-screen   ">
       {/* Company Mission */}
-      <div className="w-full flex justify-between gap-10  bg-base-100 ">
-        <div className="w-[65%] ">
+      <div className="w-full lg:flex lg:justify-between lg:gap-10  bg-base-100 ">
+        <div className="lg:w-[65%] ">
           <div className=" side-text">
             <p className="font-semibold ms-2 lg:text-[22px] ">About Us</p>
 
             <div className="flex justify-between mt-0 ">
-              <h2 className=" lg:text-2xl  ms-2  font-[500]  ">
+              <h2 className="text-[15px] lg:text-2xl  ms-2  font-[500]  ">
                 Our Ultimate Mission Is Top Quality
                 <span className="ms-2 primary-color">Camping Gear</span>
               </h2>
             </div>
           </div>
-          <p className="text-lg text-justify  mt-2 ms-2">
+          <p className="lg:text-lg text-justify   mt-2 ms-2">
             At Campers Shop, our mission is to inspire and equip outdoor
             enthusiasts by offering top-quality camping gear and exceptional
             customer service. We believe in promoting a sustainable and
@@ -38,17 +38,19 @@ const AboutUs = () => {
             </Link>
           </div>
         </div>
-        <div className="w-[35%] mt-3 ">
-          <div className="mb-3 lg:mb-0  side-pic2"></div>
+        <div className="lg:w-[35%] mt-3 ">
+          <div className="mb-3 lg:mb-0 lg:mt-0 mt-10 side-pic2"></div>
         </div>
       </div>
+      {/* Teams */}
+      <div className=" divider mt-20 font-semibold text-xl ">Our Teams</div>
+      <Teams></Teams>
+      {/* Contact Information with map and social links*/}
       <div className=" divider mt-16 font-semibold text-xl  ">
         Contact Information
       </div>
 
-      {/* Contact Information with map and social links*/}
-
-      <div className="w-full lg:flex  h-[450px] bg-base-100 shadow-md mt-16 ">
+      <div className="w-full lg:flex  lg:h-[450px] bg-base-100 shadow-md mt-16 ">
         <div className="w-full lg:w-[40%] ">
           <div className="custom-background w-full h-full rounded-s-md">
             <div className=" p-5">
@@ -177,7 +179,7 @@ const AboutUs = () => {
           </div>
         </div>
         {/* map */}
-        <div className="w-full lg:w-[60%]   ">
+        <div className="w-full lg:w-[60%] lg:h-[450px]   h-[400px] ">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29223.438221592474!2d90.38069759999999!3d23.7142016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sbn!2sbd!4v1724694845246!5m2!1sbn!2sbd"
             className="w-full h-full "
@@ -185,10 +187,6 @@ const AboutUs = () => {
           ></iframe>
         </div>
       </div>
-
-      {/* Teams */}
-      <div className=" divider mt-20 font-semibold text-xl ">Our Teams</div>
-      <Teams></Teams>
     </div>
   );
 };
