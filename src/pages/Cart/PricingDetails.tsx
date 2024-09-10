@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import { useAppSelector } from "../../redux/hook";
 
 const PricingDetails = () => {
-  const { selectedProducts, totalPrice } = useAppSelector(
+  const { selectedProducts, totalPrice, products } = useAppSelector(
     (store) => store.cart
   );
   return (
@@ -18,8 +19,18 @@ const PricingDetails = () => {
           Total Price: ${totalPrice}
         </p>
       </div>
-      <div className="pb-5 px-4 mt-10 ">
-        <button className="custom-outline-btn w-full">Place Order</button>
+      <div className="pb-5 px-4 mt-10    ">
+        {products.length > 0 ? (
+          <Link to="/checkout">
+            <button className="custom-outline-btn w-full ">
+              Proceed To Checkout
+            </button>
+          </Link>
+        ) : (
+          <button disabled className="custom-outline-btn w-full ">
+            Proceed To Checkout
+          </button>
+        )}
       </div>
     </div>
   );

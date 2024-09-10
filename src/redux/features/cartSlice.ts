@@ -57,6 +57,12 @@ export const cartSlice = createSlice({
         );
       }
     },
+
+    clearCart: (state) => {
+      state.products = [];
+      state.selectedProducts = 0;
+      state.totalPrice = 0;
+    },
   },
 });
 
@@ -79,7 +85,7 @@ export const totalPriceFunc = (state: any) =>
     return total + product.quantity * Number(product.price);
   }, 0);
 
-export const { addToCart, updateQuantity, removeAProductFromCart } =
+export const { addToCart, updateQuantity, removeAProductFromCart, clearCart } =
   cartSlice.actions;
 
 export default cartSlice.reducer;

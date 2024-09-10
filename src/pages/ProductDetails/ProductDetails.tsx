@@ -55,7 +55,7 @@ const ProductDetails = () => {
           </div>
           <h4 className="mb-3 text-xl lg:text-[30px]  ms-1">
             Price :
-            <span className="font-bold ms-2">{singleProduct?.price}</span>
+            <span className="font-bold ms-2">${singleProduct?.price}</span>
           </h4>
           <p className="ms-2 text-lg text-justify">
             {singleProduct?.description}

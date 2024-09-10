@@ -17,7 +17,7 @@ const SingleCartProduct = ({ product }: any) => {
   const handleRemoveAProductFromCart = () => {
     Swal.fire({
       title: "Are you sure?",
-      text: "do you want to delete it?",
+      text: "Do you want to delete it?",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",

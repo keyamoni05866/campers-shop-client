@@ -8,6 +8,8 @@ import ProductManagementController from "./../pages/ProductManagement/ProductMan
 import UpdateProductModal from "../pages/ProductManagement/UpdateProductModal";
 import ProductDetails from "../pages/ProductDetails/ProductDetails";
 import Cart from "../pages/Cart/Cart";
+import Checkout from "../pages/Checkout/Checkout";
+import SuccessPage from "../pages/Checkout/SuccessPage";
 
 const router = createBrowserRouter([
   {
@@ -16,23 +18,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home />,
       },
       {
         path: "/products",
-        element: <Products></Products>,
+        element: <Products />,
       },
       {
         path: "/productManagement",
-        element: <ProductManagementController></ProductManagementController>,
+        element: <ProductManagementController />,
       },
       {
         path: "products/:id",
-        element: <ProductDetails></ProductDetails>,
-      },
-      {
-        path: "/cart",
-        element: <Cart />,
+        element: <ProductDetails />,
       },
       {
         path: "updateProduct/:id",
@@ -41,8 +39,21 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/api/products/${params.id}`),
       },
       {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
+      },
+      {
+        path: "/success",
+        element: <SuccessPage />,
+      },
+
+      {
         path: "/aboutUs",
-        element: <AboutUs></AboutUs>,
+        element: <AboutUs />,
       },
     ],
   },

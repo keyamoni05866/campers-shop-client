@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useAppSelector } from "../../redux/hook";
 import PricingDetails from "./PricingDetails";
 import SingleCartProduct from "./SingleCartProduct";
@@ -20,7 +21,7 @@ const Cart = () => {
         </div>
 
         {/* order pricing details */}
-        <PricingDetails />
+        <PricingDetails></PricingDetails>
       </div>
     </div>
   );

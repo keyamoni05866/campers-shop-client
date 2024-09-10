@@ -9,6 +9,7 @@ const Home = () => {
   return (
     <div>
       <HeroSection></HeroSection>
+      <div className="divider px-3 md:px-10  lg:px-16 "></div>
       <RecommendedProducts></RecommendedProducts>
       <Categories></Categories>
       <Featured></Featured>
