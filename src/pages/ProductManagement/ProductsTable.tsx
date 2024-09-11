@@ -1,4 +1,3 @@
-// import swal from "sweetalert";
 import { toast } from "sonner";
 import {
   useDeleteProductMutation,
@@ -8,7 +7,7 @@ import { TProduct } from "../../types";
 
 import Swal from "sweetalert2";
 
-import UpdateProductModal from "./UpdateProductModal";
+import { Link } from "react-router-dom";
 
 const ProductsTable = () => {
   const { data: products } = useGetProductsQuery({});
@@ -70,27 +69,19 @@ const ProductsTable = () => {
               <td>{product.category}</td>
               <td>
                 {/* <div className=""> */}
-                <button className="me-2 btn btn-outline btn-success mb-2  btn-xs lg:btn-sm">
+                <Link
+                  to={`/products/${product._id}`}
+                  className="me-2 btn btn-outline btn-success mb-2  btn-xs lg:btn-sm"
+                >
                   Details
-                </button>
+                </Link>
 
-                {/* <UpdateProductModal {...product}> */}
-                <button className="me-2 mb-2 btn btn-xs lg:btn-sm">
-                  Update{" "}
-                </button>
-                {/* </UpdateProductModal> */}
-
-                {/* <label
+                <Link
+                  to={`/updateProduct/${product._id}`}
                   className="me-2 mb-2 btn btn-xs lg:btn-sm"
-                  htmlFor={`${product._id}`}
-                > */}
-                {/* <Link to={`/upd ateProduct/${product._id}`}> */}
-                {/* <UpdateProductModal> */}
-                {/* <Link to={`/updateProduct/${product._id}`}>Update</Link> */}
-                {/* </UpdateProductModal> */}
-                {/* </Link> */}
-                {/* </label> */}
-                {/* <UpdateProductModal></UpdateProductModal> */}
+                >
+                  Update{" "}
+                </Link>
 
                 <button
                   onClick={() => handleDelete(product._id)}

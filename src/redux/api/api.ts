@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { TProduct, TResponseRedux } from "../../types";
+import { TProduct, TResponseRedux, TUpdateProduct } from "../../types";
 
 export const baseApi = createApi({
   reducerPath: "baseApi",
@@ -23,6 +23,7 @@ export const baseApi = createApi({
     // get Product Details
     productDetails: builder.query({
       query: (id) => `/products/${id}`,
+      providesTags: ["product"],
     }),
     // get Featured Products
     featuredProducts: builder.query({
@@ -62,14 +63,15 @@ export const baseApi = createApi({
       invalidatesTags: ["product"],
     }),
 
-    updateProduct: builder.mutation({
+    updateProduct: builder.mutation<TUpdateProduct, Partial<TUpdateProduct>>({
       query: (options) => {
         return {
-          url: `/products/${options.id}`,
+          url: `/products/${options._id}`,
           method: "PUT",
-          body: options.data,
+          body: options,
         };
       },
+      invalidatesTags: ["product"],
     }),
   }),
 });
@@ -80,4 +82,5 @@ export const {
   useFeaturedProductsQuery,
   useAddProductMutation,
   useDeleteProductMutation,
+  useUpdateProductMutation,
 } = baseApi;

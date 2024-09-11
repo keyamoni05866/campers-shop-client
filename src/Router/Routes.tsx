@@ -5,7 +5,7 @@ import Products from "../pages/Products/Products";
 
 import AboutUs from "./../pages/AboutUs/AboutUs";
 import ProductManagementController from "./../pages/ProductManagement/ProductManagementController";
-import UpdateProductModal from "../pages/ProductManagement/UpdateProductModal";
+import UpdateProduct from "../pages/ProductManagement/UpdateProduct";
 import ProductDetails from "../pages/ProductDetails/ProductDetails";
 import Cart from "../pages/Cart/Cart";
 import Checkout from "../pages/Checkout/Checkout";
@@ -34,9 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: "updateProduct/:id",
-        element: <UpdateProductModal></UpdateProductModal>,
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/api/products/${params.id}`),
+        element: <UpdateProduct />,
       },
       {
         path: "/cart",
