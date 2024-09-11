@@ -27,13 +27,13 @@ const RecommendedProducts = () => {
         {products?.data?.slice(0, 6).map((product: TProduct) => (
           <div
             key={product._id}
-            className="card card-compact bg-base-200 max-w-[370px]   mx-auto"
+            className="card card-compact bg-base-200 max-w-[370px] max-h-[350px]  mx-auto"
           >
             <div className="w-[360px]  h-[220px] flex justify-center items-center">
               <img
                 src={product.image}
                 alt="Product Picture"
-                className=" w-full h-full "
+                className=" w-full  h-[220px] "
               />
             </div>
             <div className=" my-4 mx-5">
@@ -72,67 +72,6 @@ const RecommendedProducts = () => {
             </div>
           </div>
         ))}
-
-        {/* <div className=" card bg-base-100 image-full max-w-[370px] shadow-xl">
-          <figure>
-            <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="card bg-base-100 image-full max-w-[370px]   shadow-xl">
-          <figure>
-            <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="card  bg-base-100 max-w-[370px] image-full   shadow-xl">
-          <figure>
-            <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="card  bg-base-100 image-full max-w-[370px] shadow-xl">
-          <figure>
-            <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div>
-        <div className="card bg-base-100 image-full max-w-[370px] shadow-xl">
-          <figure>
-            <img src="https://image.shutterstock.com/image-photo/group-diverse-young-female-friends-260nw-2143210659.jpg" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );

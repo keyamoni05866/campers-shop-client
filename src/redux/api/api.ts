@@ -24,6 +24,21 @@ export const baseApi = createApi({
     productDetails: builder.query({
       query: (id) => `/products/${id}`,
     }),
+    // get Featured Products
+    featuredProducts: builder.query({
+      query: () => {
+        return {
+          url: "/products/featuredProducts",
+          method: "GET",
+        };
+      },
+      providesTags: ["product"],
+      transformResponse: (response: TResponseRedux<TProduct[]>) => {
+        return {
+          data: response.data,
+        };
+      },
+    }),
 
     // addProduct
     addProduct: builder.mutation({
@@ -62,6 +77,7 @@ export const baseApi = createApi({
 export const {
   useGetProductsQuery,
   useProductDetailsQuery,
+  useFeaturedProductsQuery,
   useAddProductMutation,
   useDeleteProductMutation,
 } = baseApi;

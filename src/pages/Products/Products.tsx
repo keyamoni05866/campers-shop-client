@@ -41,13 +41,16 @@ const Products = () => {
                 </h4>
 
                 <div className="card-actions items-center justify-between mt-2">
-                  <div>
+                  <div className="flex gap-2  items-center  justify-center">
                     {" "}
                     <Rating
                       style={{ maxWidth: 120 }}
-                      value={product.ratings}
+                      value={product?.ratings}
                       readOnly
                     />
+                    <span className="text-lg font-semibold mt-[2px] ">
+                      {product?.ratings} <span>/5</span>
+                    </span>
                   </div>
                   <Link
                     to={`/products/${product._id}`}
