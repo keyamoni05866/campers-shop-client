@@ -1,16 +1,16 @@
 import "./HeroSection.css";
 import Typewriter from "typewriter-effect";
 
-import img1 from "../../../assets/Banner/tent1-removebg-preview.png";
-import img2 from "../../../assets/Banner/footwear3-removebg-preview.png";
-import img3 from "../../../assets/Banner/bag5-removebg-preview.png";
+import img1 from "../../../assets/Banner/banner1.png";
+import img2 from "../../../assets/Banner/banner2.png";
+import img3 from "../../../assets/Banner/banner3.png";
 import { Link } from "react-router-dom";
 const HeroSection = () => {
   return (
     <div className="px-6  md:px-10  lg:px-16    lg:mt-20 mb-20">
       <div className=" lg:flex lg:justify-between lg:gap-8 w-full ">
         {/* content */}
-        <div className="lg:w-[55%] w-full lg:ms-3 mt-[8%]">
+        <div className="lg:w-[55%] w-full lg:ms-3 mt-[9%]">
           <div className="    lg:text-center">
             <div className="">
               <h1 className="  text-[#1F1E1E] text-[16px] xl:text-[28px]   lg:text-[25px]  font-bold flex gap-2 mb-2   ">
@@ -47,17 +47,17 @@ const HeroSection = () => {
           </div>
         </div>
         {/* images */}
-        <div className="lg:w-[45%]  mt-28 lg:mt-0">
+        <div className=" lg:w-[45%]  mt-28 lg:mt-0">
           <div className="flex gap-2">
-            <div className="bg-base-200 w-[600px]  h-[220px]">
+            <div className="custom-background rounded-md w-[600px]  h-[220px]">
               <img src={img1} alt="" className="w-full h-full" />
             </div>
-            <div className="bg-base-200 w-[600px]  h-[220px]">
-              <img src={img2} alt="" className="w-full h-full" />
+            <div className=" custom-background rounded-md w-[600px]  h-[220px]">
+              <img src={img3} alt="" className="w-full h-full" />
             </div>
           </div>
-          <div className="bg-base-200 h-[220px] mt-2">
-            <img src={img3} alt="" className="w-full h-full" />
+          <div className="custom-background rounded-md h-[260px] mt-2 ">
+            <img src={img2} alt="" className="w-full h-full" />
           </div>
         </div>
       </div>

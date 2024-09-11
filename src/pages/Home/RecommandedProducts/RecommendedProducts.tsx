@@ -27,9 +27,9 @@ const RecommendedProducts = () => {
         {products?.data?.slice(0, 6).map((product: TProduct) => (
           <div
             key={product._id}
-            className="card card-compact bg-base-200 max-w-[370px] max-h-[350px]  mx-auto"
+            className="card card-compact bg-base-200 max-w-96 lg:max-h-[350px]  mx-auto"
           >
-            <div className="w-[360px]  h-[220px] flex justify-center items-center">
+            <div className="lg:w-[360px]  lg:h-[220px] flex justify-center items-center">
               <img
                 src={product.image}
                 alt="Product Picture"

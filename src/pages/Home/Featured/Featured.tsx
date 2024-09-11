@@ -24,7 +24,7 @@ const Featured = () => {
         {products?.data?.map((product: TProduct) => (
           <div
             key={product._id}
-            className="card card-compact bg-base-100 max-w-[360px] rounded-[2px] mx-auto"
+            className="card card-compact max-96 bg-base-100 rounded-[2px] mx-auto"
           >
             <div className=" w-[360px] bg-base-300 rounded-md  h-[220px] flex justify-center items-center">
               <img
