@@ -3,6 +3,9 @@ import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { clearCart } from "../../redux/features/cartSlice";
+import { useAddOrderMutation } from "../../redux/api/api";
+import { toast } from "sonner";
+import { TResponse } from "../../types";
 
 type CheckOutInputs = {
   name: string;
@@ -12,22 +15,42 @@ type CheckOutInputs = {
   cashOnDelivery: boolean;
 };
 const Checkout = () => {
-  const { selectedProducts, totalPrice } = useAppSelector(
+  const { selectedProducts, totalPrice, products } = useAppSelector(
     (store) => store.cart
   );
   const { register, handleSubmit } = useForm<CheckOutInputs>();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const [addOrder] = useAddOrderMutation();
   const onSubmit: SubmitHandler<CheckOutInputs> = async (data) => {
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Your order has been placed successfully!",
-      showConfirmButton: true,
-    });
+    const toastId = toast.loading("Creating....");
+    // console.log(data.cashOnDelivery);
+    const orderInformation = {
+      name: data.name,
+      email: data.email,
+      number: data.number,
+      address: data.address,
+      cashOnDelivery: data.cashOnDelivery,
+      products: products.map((item: any) => ({
+        product: item._id,
+        quantity: item.quantity,
+      })),
+    };
+
+    try {
+      const res = (await addOrder(orderInformation)) as TResponse<any>;
+      if (res.error) {
+        toast.error(res.error?.data?.message, { id: toastId });
+      } else {
+        toast.success(res.data?.message, { id: toastId });
+      }
+    } catch (err) {
+      toast.error("Something Went Wrong!!");
+    }
+
     dispatch(clearCart());
     navigate("/success");
-    console.log(data);
+    // console.log(data);
   };
   return (
     <div className=" min-h-screen mt-12 mb-28 px-4 lg:px-20 ">
@@ -44,10 +67,10 @@ const Checkout = () => {
       <div className="divider">Checkout Information</div>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex   justify-between gap-10  w-full ">
+        <div className="lg:flex   justify-between gap-10  w-full ">
           {/* CheckOut Form */}
 
-          <div className="w-[80%] border p-10 mt-8">
+          <div className="lg:w-[80%] border p-10 mt-8">
             <div className="mb-3">
               <label className="block text-sm font-medium leading-6 text-gray-900">
                 Name :

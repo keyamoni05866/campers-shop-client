@@ -8,7 +8,7 @@ const Cart = () => {
   console.log(products);
   return (
     <div className="my-[70px] px-4 lg:px-20  min-h-screen ">
-      <div className="flex lg:flex-row  justify-center lg:space-x-40">
+      <div className="lg:flex lg:flex-row lg:space-y-0 space-y-5  justify-center lg:space-x-40">
         <div className="space-y-5 lg:mt-0 mt-5">
           {/* Cart Products */}
           {products.length ? (
