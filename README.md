@@ -1,30 +1,51 @@
-# React + TypeScript + Vite
+# Campers Shop E-Commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Link** :
 
-Currently, two official plugins are available:
+# Introduction
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is the frontend for the Campers Shop, an e-commerce platform for camping enthusiasts. It provides a product search, filtering, and sorting functionality using React and Redux Toolkit Query (RTK Query) also used Redux State management for Cart Page Functionality. <br/>
 
-## Expanding the ESLint configuration
+# Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. State Management : Using Redux State Management for Cart Page.
+2. API : Using Redux RTK Query for API call.
+3. Search Functionality : Users can search for products by name or description.
+4. Filter and sorting : Users can filter products by category, price range and sort them by price (low to high, high to low).
+5. Responsive Design: Optimized for various screen sizes and devices.
 
-- Configure the top-level `parserOptions` property like this:
+# Technology Stack
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+**Frontend** <br/>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. **React**
+2. **TypeScript**
+3. **DaisyUi**
+4. **React Redux and RTK Query**
+5. **React Hook form**
+
+**Backend and Database** <br/>
+
+1. **Node.js**
+2. **TypeScript**
+3. **Express.js**
+4. **Mongodb**
+
+# Installation Guideline
+
+**Prerequisites**
+
+1. Node.js (v14 or Higher)
+2. MongoDB (Locally Installed or cloud instance ) <br>
+
+**Installation**
+
+1. Clone the repository for Frontend <br> https://github.com/keyamoni05866/campers-shop-client <br>
+2. Clone the repository for Backend <br> https://github.com/keyamoni05866/campers-shop-server <br>
+3. Install Dependencies for frontend and backend ---- npm install <br>
+4. Set up the Env variables for Backend: <br>
+
+- Create a .env file in the root directory. <br>
+- Add the following environment variables:<br>
+  PORT=5000<br>
+  DATABASE_URL= The connection string for your MongoDB database. <br>

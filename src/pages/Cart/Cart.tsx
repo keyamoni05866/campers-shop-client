@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
 import { useAppSelector } from "../../redux/hook";
 import PricingDetails from "./PricingDetails";
 import SingleCartProduct from "./SingleCartProduct";
 
 const Cart = () => {
   const products = useAppSelector((store) => store.cart.products);
-  console.log(products);
+  // console.log(products);
+
   return (
     <div className="my-[70px] px-4 lg:px-20  min-h-screen ">
       <div className="lg:flex lg:flex-row lg:space-y-0 space-y-5  justify-center lg:space-x-40">

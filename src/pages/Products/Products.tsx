@@ -4,22 +4,133 @@ import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
 import { useGetProductsQuery } from "../../redux/api/api";
 import { TProduct } from "../../types";
+import ProductsGallery from "./ProductsGallery";
+
+import { useState } from "react";
 const Products = () => {
-  const { data: products } = useGetProductsQuery({});
+  const [searchQuery, setSearchQuery] = useState("");
+  const [category, setCategory] = useState("All");
+  const [minPrice, setMinprice] = useState<number | "">("");
+  const [maxPrice, setMaxPrice] = useState<number | "">("");
+  const [sortByOrder, setSortByOrder] = useState<"asc" | "desc">("asc");
+
+  const { data: products } = useGetProductsQuery({
+    searchQuery,
+    category,
+    minPrice,
+    maxPrice,
+    sortByOrder,
+  });
+
+  // for clear filters
+  const handleForClear = () => {
+    setSearchQuery("");
+    setCategory("All");
+    setMinprice("");
+    setMaxPrice("");
+    setSortByOrder("asc");
+  };
+
   return (
-    <div className="mt-12 mb-28 px-4 lg:px-24 min-h-screen">
-      {/* <div className=" side-text">
+    <div className="mt-6 mb-28 px-4 lg:px-20 min-h-screen">
+      <div className=" side-text   mb-10">
         <p className="font-semibold ms-2 lg:text-[22px] ">
-          Featured <span className="primary-color"> Products</span>
+          Product <span className="primary-color">Collections</span>
         </p>
         <div className="flex justify-between mt-0 ">
           <h2 className=" lg:text-2xl  ms-2  font-[500]  ">
-            Must-Have Camping Gear
+            Find the Perfect Camping Essentials
           </h2>
         </div>
-      </div> */}
+      </div>
+      <ProductsGallery />
+      <div className="divider font-semibold  "></div>
+      {/* search */}
 
-      <div className="mt-10 mx-5 card-grid   gap-6 ">
+      <div className="lg:flex justify-between items-center w-full">
+        <div className="">
+          <label className="input input-bordered my-5 flex items-center ">
+            <input
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              type="text"
+              className="grow"
+              placeholder="Search Your Product"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              className="h-4 w-4 opacity-70"
+            >
+              <path
+                fillRule="evenodd"
+                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </label>
+        </div>
+        <div className="lg:w-[80%] flex justify-end gap-2">
+          <div className="lg:w-[20%]">
+            <select
+              className=" select select-bordered w-full max-w-xs"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="All">All Categories</option>
+              <option value="Tents & Shelters">Tents & Shelters</option>
+              <option value="Backpacks & Bags">Backpacks & Bags</option>
+              <option value="Footwear">Footwear</option>
+              <option value="Lighting & Navigation">
+                Lighting & Navigation
+              </option>
+              <option value="Camp Furniture">Camp Furniture</option>
+              <option value="Health & Safety">Health & Safety</option>
+            </select>
+          </div>
+          <div className="lg:w-[20%]">
+            <input
+              value={maxPrice}
+              onChange={(e) =>
+                setMaxPrice(e.target.value ? Number(e.target.value) : "")
+              }
+              type="string"
+              className="input input-bordered w-full max-w-xs"
+              placeholder="MaximumP Price"
+            />
+          </div>
+          <div className="lg:w-[20%]">
+            <input
+              value={minPrice}
+              onChange={(e) =>
+                setMinprice(e.target.value ? Number(e.target.value) : "")
+              }
+              type="string"
+              className="input input-bordered w-full max-w-xs"
+              placeholder=" Minimum Price"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-end gap-6 lg:mt-0 mt-3">
+        <div className=" ms-2">
+          <select
+            className="select select-bordered w-full max-w-xs"
+            value={sortByOrder}
+            onChange={(e) => setSortByOrder(e.target.value as "asc" | "desc")}
+          >
+            <option value="asc">Price: Low to High</option>
+            <option value="desc">Price: High to Low</option>
+          </select>
+        </div>
+        <button className="custom-outline-btn " onClick={handleForClear}>
+          Clear Filters
+        </button>
+      </div>
+
+      {/* Products */}
+      <div className="mt-5 mx-5 card-grid   gap-6 ">
         {products?.data && products?.data?.length > 0 ? (
           products?.data?.map((product: TProduct) => (
             <div
@@ -38,6 +149,10 @@ const Products = () => {
                 <h4 className=" text-lg mt-3 ">
                   Price:{" "}
                   <span className="font-semibold">${product?.price}</span>
+                </h4>
+                <h4 className=" text-lg mt-3 ">
+                  Category:{" "}
+                  <span className="font-semibold">${product?.category}</span>
                 </h4>
 
                 <div className="card-actions items-center justify-between mt-2">

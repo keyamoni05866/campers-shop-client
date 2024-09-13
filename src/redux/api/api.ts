@@ -7,10 +7,11 @@ export const baseApi = createApi({
   tagTypes: ["product", "order"],
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: () => {
+      query: (params) => {
         return {
           url: "/products",
           method: "GET",
+          params,
         };
       },
       providesTags: ["product"],

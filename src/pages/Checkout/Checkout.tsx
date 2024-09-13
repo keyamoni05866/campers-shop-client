@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hook";
 import { SubmitHandler, useForm } from "react-hook-form";
-import Swal from "sweetalert2";
+
 import { clearCart } from "../../redux/features/cartSlice";
 import { useAddOrderMutation } from "../../redux/api/api";
 import { toast } from "sonner";

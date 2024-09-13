@@ -3,7 +3,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
-import pic1 from "../../../assets/testimonialPictures/image1.png";
 import category1 from "../../../assets/category/bagpacks.png";
 import category2 from "../../../assets/category/campingFurniture.png";
 import category3 from "../../../assets/category/footwear.png";
