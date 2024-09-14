@@ -46,9 +46,9 @@ const SingleCartProduct = ({ product }: any) => {
           className="w-full h-full object-cover "
         />
       </div>
-      <div className="flex-grow mx-4">
-        <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
-        <p className="text-lg font-bold">${product?.price}</p>
+      <div className="lg:flex-grow lg:mx-4">
+        <h3 className="lg:text-lg font-semibold mb-2">{product.name}</h3>
+        <p className="lg:text-lg font-bold">${product?.price}</p>
       </div>
       <div className="flex items-center space-x-2 mt-16">
         <button

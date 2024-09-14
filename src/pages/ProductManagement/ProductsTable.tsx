@@ -68,7 +68,6 @@ const ProductsTable = () => {
               <td>${product?.price}</td>
               <td>{product.category}</td>
               <td>
-                {/* <div className=""> */}
                 <Link
                   to={`/products/${product._id}`}
                   className="me-2 btn btn-outline btn-success mb-2  btn-xs lg:btn-sm"
@@ -89,7 +88,6 @@ const ProductsTable = () => {
                 >
                   Delete
                 </button>
-                {/* </div> */}
               </td>
             </tr>
           ))

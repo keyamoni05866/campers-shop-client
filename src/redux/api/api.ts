@@ -3,7 +3,9 @@ import { TProduct, TResponseRedux, TUpdateProduct } from "../../types";
 
 export const baseApi = createApi({
   reducerPath: "baseApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://campers-shop-server-two.vercel.app/api",
+  }),
   tagTypes: ["product", "order"],
   endpoints: (builder) => ({
     getProducts: builder.query({

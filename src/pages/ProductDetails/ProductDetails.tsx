@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useProductDetailsQuery } from "../../redux/api/api";
 import { Rating } from "@smastrom/react-rating";
 import { useAppDispatch } from "../../redux/hook";
